@@ -63,16 +63,19 @@ public class Main {
         //dolphin1.swim();
         //penguin1.swim();
 
-        myZoo1.addAquaticAnimal((Aquatic) penguin1);//instruction 26
-        myZoo1.addAquaticAnimal((Aquatic) penguin2);//instruction 26
-        myZoo1.addAquaticAnimal((Aquatic) dolphin2);
+        myZoo1.addAquaticAnimal(penguin1);//instruction 26
+        myZoo1.addAquaticAnimal(penguin2);//instruction 26
+        myZoo1.addAquaticAnimal(dolphin2);
         myZoo1.afficherAquatic();
 
         System.out.println(myZoo1.maxPenguinSwimmingDepth()); // instruction 29
         myZoo1.displayNumberOfAquaticsByType(); // instruction 30
         System.out.println(penguin2.equals(dolphin1)); //instruction 31
         System.out.println(dolphin1.equals(dolphin1));
+        System.out.println(penguin1.equals(penguin1));
+
         myZoo1.swimAquatic(); // instruction 27
+
 
     }
 }

@@ -20,17 +20,15 @@ public abstract class  Aquatic extends Animal{
         System.out.println("This aquatic animal is swimming.");
     } */
     //instruction 31
-    public boolean equals(Dolphin dolphin1) {
-        if (this == dolphin1) return true;
-        if (null == dolphin1) return false;
-        if (dolphin1.getClass() == Dolphin.class){
-            Dolphin dolphin =(Dolphin) dolphin1;
-            return getAge() == dolphin.getAge() && getName().equals(dolphin.getName()) && habitat.equals(dolphin.habitat) ;
-        }
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (null == object || getClass() != object.getClass()) return false;
+        Aquatic aquatic =(Aquatic) object;
+        return getAge() == aquatic.getAge() && getName().equals(aquatic.getName()) && habitat.equals(aquatic.habitat) ;
 
-        return false;
     }
 }
+
 
 
 

@@ -183,8 +183,8 @@ public class Zoo {
     }
     //instruction 27
     public void swimAquatic() {
-        for (int i = 0; i <10; i++) {
-            aquaticAnimals[i].swim();
+        for (Aquatic aquatic : aquaticAnimals) {
+            aquatic.swim();
         }
     }
 
