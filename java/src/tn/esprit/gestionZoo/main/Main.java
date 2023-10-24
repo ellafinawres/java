@@ -19,7 +19,7 @@ public class Main {
         Animal lion = new Animal("chiens", "loulou", 1, true); // instruction 7
         System.out.println(lion); // // instruction 9
         System.out.println(lion.toString()); // instruction 9
-        Animal chat = new Animal("chats", "simba", 2, true);
+        Animal chat = new Animal("chats", "simba", -2, true); // pour tester instruction de l'exeption age
         Animal chien = new Animal("chiots", "foufou", 2, true);
         Animal chat2 = new Animal("chiots", "simba2", 2, true);
         Animal chien2 = new Animal("chiots", "foufou2", 3, true);
@@ -28,8 +28,8 @@ public class Main {
         chien3.setFamily("chiots");
         chien3.setAge(-2);  // tester instruction 18
         chien3.setMammal(true);
-        System.out.println(myZoo1.addAnimal(lion));
-        System.out.println(myZoo2.addAnimal(chat));
+        //System.out.println(myZoo1.addAnimal(lion));
+      //  System.out.println(myZoo2.addAnimal(chat));
         myZoo1.afficherAnimal(); // appel instruction 11
         System.out.println("l'indice est :"+ myZoo1.searchAnimal(chat)); //  instruction 11
         System.out.println(myZoo1.addUniq(chien)); //instrurctin 12
@@ -66,7 +66,7 @@ public class Main {
         myZoo1.addAquaticAnimal(penguin1);//instruction 26
         myZoo1.addAquaticAnimal(penguin2);//instruction 26
         myZoo1.addAquaticAnimal(dolphin2);
-        myZoo1.afficherAquatic();
+
 
         System.out.println(myZoo1.maxPenguinSwimmingDepth()); // instruction 29
         myZoo1.displayNumberOfAquaticsByType(); // instruction 30
@@ -74,6 +74,30 @@ public class Main {
         System.out.println(dolphin1.equals(dolphin1));
         System.out.println(penguin1.equals(penguin1));
 
+        // instruction 32/33/34
+        try {
+            myZoo2.addAnimal(chien);
+            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            myZoo2.addAnimal(chien2);
+            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            myZoo2.addAnimal(chien3);
+            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+            myZoo2.addAnimal(lion);
+            System.out.println(" Nombre d'animaux dans le Zoo: "+myZoo2.totalAnimals());
+        } catch (ZooFullException e) {
+            System.err.println("Erreur 1 : " + e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.err.println("Erreur2 d'age : " + e.getMessage());
+        }
+
+        try {
+            myZoo1.addAnimal(chat);
+            System.out.println(" Nombre d'animaux dans le Zoo2: "+myZoo1.totalAnimals());
+        } catch (ZooFullException e) {
+            System.err.println("Erreur1  : " + e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.err.println("Erreur2 d'âge : " + e.getMessage());
+        }
         myZoo1.swimAquatic(); // instruction 27
 
 
