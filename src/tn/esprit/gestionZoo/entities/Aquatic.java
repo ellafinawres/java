@@ -10,7 +10,7 @@ public non-sealed abstract class  Aquatic extends Animal{
        this.habitat=habitat;
    }
 
-    //instruction 23
+    //instruction 23 :
    @Override
     public String toString() {
         return super.toString()+" " +habitat;
@@ -19,7 +19,7 @@ public non-sealed abstract class  Aquatic extends Animal{
     /* public void swim(){
         System.out.println("This aquatic animal is swimming.");
     } */
-    //instruction 31
+    //instruction 31 :
     public boolean equals(Object object) {
         if (this == object) return true;
         if (null == object || getClass() != object.getClass()) return false;
